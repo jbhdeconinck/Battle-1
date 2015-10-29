@@ -5,6 +5,4 @@ gem "sinatra"
 gem "capybara"
 gem "rspec-sinatra"
 gem "rspec"
-
-
-
+gem "shotgun"
