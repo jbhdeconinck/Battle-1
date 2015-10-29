@@ -15,11 +15,4 @@ describe Player do
     end
   end
 
-  describe "#attack" do
-    it 'performs the reduce_hp method another Player' do
-      expect(george).to receive(:reduce_hp)
-      julien.attack(george)
-    end
-  end
-
 end

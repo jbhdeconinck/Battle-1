@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'shotgun'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -22,7 +23,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attacking' do
-    $player_1.attack($player_2)
+    Game.new.attack($player_2)
     redirect '/attack'
   end
 
