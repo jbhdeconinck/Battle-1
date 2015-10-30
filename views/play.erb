@@ -1,7 +1,14 @@
 <html>
 <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
-
-<h1><%= @game.player_2.name %>'s HP: <%= @game.player_2.hp %></h1>
+<h2><%= @game.player_2.name %>'s HP: <%= @game.player_2.hp %></h2>
+<h2><%= @game.player_1.name %>'s HP: <%= @game.player_1.hp %></h2>
+<h2><%= @game.current_turn.name %>'s turn to attack</h2>
+<% if @game.player_1.hp == 0 %>
+<h2><%=@game.player_1.name %> loses the battle!</h2>
+<% end %>
+<% if @game.player_2.hp == 0 %>
+<h2><%=@game.player_2.name %> loses the battle!</h2>
+<% end %>
 <form action='/attacking' method='post'>
 <input type="submit" value="Attack">
 </form>

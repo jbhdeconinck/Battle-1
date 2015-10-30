@@ -1,5 +1,9 @@
 <html>
-<%=@game.player_1.name%> attacked <%=@game.player_2.name%>
+<h1><%=@game.current_turn.name%> attacked <%=@game.opponent(@game.current_turn).name%></h1>
 
-<h1><%= @game.player_2.name %>'s HP: <%= @game.player_2.hp %></h1>
+<h2><%= @game.opponent(@game.current_turn).name %>'s HP: <%= @game.opponent(@game.current_turn).hp %></h2>
+<h2><%= @game.opponent(@game.current_turn).name %>'s turn to attack</h2>
+<form action='/back_to_play' method="post">
+<input type="submit" value="Back to play">
+</form>
 </html>
